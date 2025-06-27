@@ -1,0 +1,2 @@
+<?php 
+//Silencio é bom

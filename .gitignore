@@ -1,0 +1,62 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs e backups
+*.log
+*.sql
+*.sqlite
+*.zip
+*.tar.gz
+*.rar
+
+# Composer
+/vendor/
+composer.lock
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Ambiente
+.env
+.env.*
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# WordPress Core
+/wp-admin/
+/wp-includes/
+
+# WordPress Uploads
+wp-content/uploads/
+
+# Plugins (exceto os que você desenvolve)
+wp-content/plugins/*
+!wp-content/plugins/seu-plugin-personalizado/
+
+# Temas (exceto o seu tema)
+wp-content/themes/*
+!wp-content/themes/seu-tema/
+
+# Cache e temporários
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/backups/
+wp-content/upgrade/
+wp-content/wp-cache-config.php
+
+# SASS/CSS temporário
+*.css.map
+*.scssc
+.sass-cache/
+.cache/
+
+# Outros arquivos temporários
+*.swp
+*.bak
+*.tmp
