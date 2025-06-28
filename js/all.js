@@ -1,0 +1,1 @@
+var menuMobile=document.querySelector("#js-btn-menu");menuMobile.addEventListener("click",function(){menuMobile.classList.toggle("active")});
