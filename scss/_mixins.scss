@@ -1,0 +1,33 @@
+@use 'sass:map';
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-total-center {
+  @include flex-center;
+  justify-content: center;
+}
+
+@mixin flex-center-justify {
+  @include flex-center;
+  justify-content: space-between;
+}
+
+$breakpoints: (
+  'laptop': 1200px,
+  'lap-xs': 1050px,
+  'tablet': 991px,
+  'mobile': 560px,
+);
+
+@mixin responsive($breakpoints-name) {
+  @if map.has-key($breakpoints, $breakpoints-name) {
+    @media (max-width: map.get($breakpoints, $breakpoints-name)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint que você definiu não existe";
+  }
+}
