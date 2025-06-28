@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: 'bc-novatica-cyr', sans-serif;
+  font-family: 'Avenir', sans-serif;
 }
 
 ul {
@@ -25,4 +25,9 @@ button {
   cursor: pointer;
   background: none;
   border: none;
+}
+
+body,
+html {
+  font-size: 62.5%;
 }
