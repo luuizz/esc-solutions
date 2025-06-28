@@ -86,31 +86,6 @@ function browser() {
 }
 gulp.task('browser-sync', browser);
 
-// Otimiza e converte PNG
-function imagensPNG() {
-  if (!arquivosExistem('assets')) return Promise.resolve();
-
-  return gulp
-    .src('assets/*.png')
-    .pipe(imagemin())
-    .pipe(webp())
-    .pipe(gulp.dest('assets/'))
-    .pipe(browserSync.stream());
-}
-gulp.task('png2webp', imagensPNG);
-
-// Otimiza e converte JPG/JPEG
-function imagensJPG() {
-  if (!arquivosExistem('assets')) return Promise.resolve();
-
-  return gulp
-    .src(['assets/*.jpg', 'assets/*.jpeg'])
-    .pipe(webp())
-    .pipe(gulp.dest('assets/'))
-    .pipe(browserSync.stream());
-}
-gulp.task('jpg2webp', imagensJPG);
-
 // Watch
 function watch() {
   gulp.watch('scss/*.scss', compilaSass);
@@ -118,22 +93,11 @@ function watch() {
   gulp.watch(paths.php).on('change', browserSync.reload);
   gulp.watch(paths.jsScripts, gulpJs);
   gulp.watch(paths.jsLibs, pluginsJs);
-  gulp.watch('assets/**/*.png', imagensPNG);
-  gulp.watch(['assets/**/*.jpg', 'assets/**/*.jpeg'], imagensJPG);
 }
 gulp.task('watch', watch);
 
 // Default
 gulp.task(
   'default',
-  gulp.parallel(
-    'watch',
-    'browser-sync',
-    'sass',
-    'plugincss',
-    'png2webp',
-    'jpg2webp',
-    'alljs',
-    'pluginjs',
-  ),
+  gulp.parallel('watch', 'browser-sync', 'sass', 'plugincss', 'alljs', 'pluginjs'),
 );
