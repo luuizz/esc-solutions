@@ -1,9 +1,6 @@
 <?php
 
-function load_fonts_custom() {
-  wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/igq7dby.css', array(), null);
-}
-
+//Carregat os arquivos CSS
 function esc_load_styles() {
     // Estilo do plugin
     wp_enqueue_style( 'esc-plugin-style', get_template_directory_uri() . '/css/plugins.css', array(), '1.0', 'all' );
@@ -12,6 +9,7 @@ function esc_load_styles() {
     wp_enqueue_style( 'esc-style', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all' );
 }
 
+//Carregat os arquivos JS
 function esc_load_js() {
     // Script do plugin
     wp_register_script( 'plugin-script', get_template_directory_uri() . '/js/plugins.js', array(), '1.0', true );
@@ -22,6 +20,29 @@ function esc_load_js() {
     wp_enqueue_script( 'main-script' );
 }
 
+//Renderizar SVGs
+function render_svg_icon($name, $class = '') {
+  $filename = "icon-{$name}.svg";
+  $filepath = get_template_directory() . "/assets/icons/{$filename}";
+
+  if (file_exists($filepath)) {
+    $svg = file_get_contents($filepath);
+
+    if ($class) {
+      if (preg_match('/<svg[^>]*class="/', $svg)) {
+        $svg = preg_replace('/<svg[^>]*class="/', '<svg class="' . esc_attr($class) . ' ', $svg, 1);
+      } else {
+        $svg = preg_replace('/<svg([^>]*)>/', '<svg$1 class="' . esc_attr($class) . '">', $svg, 1);
+      }
+    }
+
+    return $svg;
+  }
+
+  return '<!-- Ícone não encontrado: ' . esc_html($name) . ' -->';
+}
+
+//Remover os links do head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'start_post_rel_link', 10, 0 );
@@ -36,6 +57,5 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 //Suporte ao tema
 add_theme_support( 'post-thumbnails' );
 add_theme_support('menus');
-add_action( 'wp_enqueue_scripts', 'load_fonts_custom' );
 add_action('wp_enqueue_scripts', 'esc_load_styles');
 add_action( 'wp_enqueue_scripts', 'esc_load_js' );
