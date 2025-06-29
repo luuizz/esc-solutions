@@ -1,1 +1,1 @@
-var menuMobile=document.querySelector("#js-btn-menu");menuMobile.addEventListener("click",function(){menuMobile.classList.toggle("active")});
+var menuMobile=document.querySelector("#js-btn-menu"),header=document.querySelector("header");menuMobile.addEventListener("click",function(){menuMobile.classList.toggle("active")}),window.addEventListener("scroll",function(){50<window.scrollY?header.classList.add("fixed"):header.classList.remove("fixed")});
