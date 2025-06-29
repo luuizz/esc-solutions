@@ -1,64 +1,16 @@
 <?php
-$social_media = [
+$cards_process = [
   [
-    'name' => 'Linkedin',
-    'link' => '#',
-    'icon' => 'icon-linkedin'
+    'title' => 'Entre em contato',
+    'text' => 'Agende uma reunião inicial para conhecer nosso time, tirar dúvidas e ver o sistema em funcionamento. É o primeiro passo para abrir sua ESC com segurança.',
   ],
   [
-    'name' => 'Instagram',
-    'link' => '#',
-    'icon' => 'icon-instagram'
+    'title' => 'Envio de dados',
+    'text' => 'Nossa contabilidade solicitará os dados da empresa (capital, endereço e sócios). Após o envio, sua ESC será aberta em até 10 dias.',
   ],
   [
-    'name' => 'Facebook',
-    'link' => '#',
-    'icon' => 'icon-facebook'
-  ],
-  [
-    'name' => 'Twitter',
-    'link' => '#',
-    'icon' => 'icon-twitter'
-  ],
-  [
-    'name' => 'Youtube',
-    'link' => '#',
-    'icon' => 'icon-youtube'
+    'title' => 'Treinamento e início das operações',
+    'text' => 'Após a abertura, você terá acesso a um treinamento online de 8 horas, com foco em operação, boas práticas, gestão de riscos e uso do ESC System.',
   ]
 ];
-
-$footer_links = [
-  [
-    'column' => 'Conheça',
-    'links' => [
-      [ 'name' => 'Como funciona', 'link' => '#' ],
-      [ 'name' => 'Soluções', 'link' => '#' ],
-      [ 'name' => 'Planos de adesão', 'link' => '#' ],
-    ]
-  ],
-  [
-    'column' => 'Conteúdo',
-    'links' => [
-      [ 'name' => 'Notícias', 'link' => '#' ],
-      [ 'name' => 'Artigos', 'link' => '#' ],
-      [ 'name' => 'Política de Privacidade', 'link' => '#' ],
-    ]
-  ],
-  [
-    'column' => 'Atendimento',
-    'links' => [
-      [
-        'name' => '(61) 98158-4546',
-        'link' => 'https://api.whatsapp.com/send?phone=5561981584546&text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20or%C3%A7amento.',
-        'icon' => 'icon-whatsapp-line'
-      ],
-      [
-        'name' => 'faleconosco@emprestalegal.com.br',
-        'link' => 'mailto:faleconosco@emprestalegal.com.br',
-      ],
-    ]
-  ]
-];
-
-
 ?>
