@@ -4,6 +4,16 @@ get_header();
 
 ?>
 
-<h1>Home</h1>
+<?php require_once 'template-parts/lp-01/section-hero.php'; ?>
+
+<?php require_once 'template-parts/lp-01/section-how-work.php'; ?>
+
+<?php require_once 'template-parts/lp-01/section-solutions.php'; ?>
+
+<?php require_once 'template-parts/lp-01/section-plans.php'; ?>
+
+<?php require_once 'template-parts/components/blog.php'; ?>
+
+<?php require_once 'template-parts/components/magazine.php'; ?>
 
 <?php get_footer(); ?>
