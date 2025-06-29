@@ -41,3 +41,11 @@ $breakpoints: (
     @warn "Breakpoint que você definiu não existe";
   }
 }
+
+@mixin truncate($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
