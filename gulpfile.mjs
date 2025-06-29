@@ -6,7 +6,6 @@ import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
-import webp from 'gulp-webp';
 import fs from 'fs';
 
 const sass = gulpSass(dartSass);
@@ -16,7 +15,7 @@ const paths = {
   cssDefault: 'css/*.css',
   jsLibs: 'js/lib/*.js',
   jsScripts: 'js/scripts/*.js',
-  php: '*.php',
+  php: ['*.php', '**/*.php'],
 };
 
 // Função para verificar se a pasta contém arquivos
