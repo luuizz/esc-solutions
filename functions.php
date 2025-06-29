@@ -42,6 +42,34 @@ function render_svg_icon($name, $class = '') {
   return '<!-- Ícone não encontrado: ' . esc_html($name) . ' -->';
 }
 
+// Adiciona uma nova coluna chamada "Banner"
+add_filter('manage_posts_columns', 'add_thumbnail_column');
+function add_thumbnail_column($columns) {
+    $new = [];
+    foreach($columns as $key => $title) {
+        if ($key == 'title') {
+            $new['thumbnail'] = 'Banner';
+        }
+        $new[$key] = $title;
+    }
+    return $new;
+}
+
+// Mostra a thumbnail na nova coluna
+add_action('manage_posts_custom_column', 'display_thumbnail_column', 10, 2);
+function display_thumbnail_column($column, $post_id) {
+    if ($column == 'thumbnail') {
+        $thumb = get_the_post_thumbnail($post_id, [80, 80]); // 1:1 com 80px
+        echo $thumb ?: '—';
+    }
+}
+
+// Deixa a nova coluna "Imagem" ordenável
+add_filter('manage_edit-post_sortable_columns', function($columns) {
+    $columns['thumbnail'] = 'thumbnail';
+    return $columns;
+});
+
 //Remover os links do head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
