@@ -8,7 +8,9 @@
 @use 'grid';
 @use 'header';
 @use 'footer';
+@use 'components';
 
 // Páginas - Se houver
 
 @use 'home';
+@use 'single-posts';
