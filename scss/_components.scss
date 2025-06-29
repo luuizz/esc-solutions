@@ -1,0 +1,130 @@
+@use 'mixins' as *;
+
+.card-item {
+  padding: 3.2rem 3.2rem 0rem 3.2rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--accent-03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  &:nth-child(1) {
+    .number {
+      background-color: var(--accent-03);
+    }
+  }
+  &:nth-child(2) {
+    .number {
+      background-color: var(--accent-05);
+    }
+  }
+  &:nth-child(3) {
+    .number {
+      background-color: var(--accent-06);
+    }
+  }
+  h4 {
+    margin-bottom: 1.6rem;
+    font-weight: 800;
+    line-height: 140%;
+    color: var(--black);
+    height: 5.2rem;
+  }
+  p {
+    margin-bottom: 3.2rem;
+    color: var(--gray-700);
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .number {
+    @include flex-total-center;
+    width: 100%;
+    border-radius: 0.4rem 0.4rem 0rem 0rem;
+    height: 9rem;
+    span {
+      font-size: 4.8rem;
+      font-weight: 800;
+      line-height: 120%;
+      color: var(--white);
+    }
+  }
+}
+
+.card-post {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 96.53%);
+    z-index: 0;
+  }
+
+  &:hover {
+    .banner img {
+      transform: scale(1.05);
+    }
+  }
+
+  .banner {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 5;
+
+    h3 {
+      font-weight: 700;
+      color: var(--white);
+      line-height: 120%;
+      text-wrap: balance;
+      @include truncate(2);
+    }
+  }
+}
+
+.card-post:nth-child(1) {
+  padding: 5.6rem 4rem 4.8rem 4rem;
+  .content h3 {
+    margin-top: 1.6rem;
+    font-size: 3.2rem;
+    height: 7.6rem;
+  }
+}
+
+.card-post:nth-child(2),
+.card-post:nth-child(3) {
+  padding: 3.2rem;
+  &::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 5.43%, rgba(0, 0, 0, 0.8) 97.87%);
+  }
+  .content h3 {
+    margin-top: 1.2rem;
+    font-size: 2.4rem;
+    height: 6.8rem;
+    line-height: 140%;
+  }
+}
