@@ -53,3 +53,17 @@
     gap: 0.8rem;
   }
 }
+
+.caption {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--accent-02);
+  text-align: center;
+  span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    letter-spacing: 0.33rem;
+  }
+}
