@@ -102,4 +102,13 @@ footer {
   img {
     width: 100%;
   }
+  @include responsive('laptop-small', max) {
+    .top-area {
+      .container {
+        .logo {
+          max-width: 27rem;
+        }
+      }
+    }
+  }
 }

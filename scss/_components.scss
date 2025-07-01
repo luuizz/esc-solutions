@@ -127,4 +127,13 @@
     height: 6.8rem;
     line-height: 140%;
   }
+  @include responsive('desktop-small', max) {
+    .content {
+      h3 {
+        font-size: 2rem;
+        height: 5.6rem;
+        line-height: 130%;
+      }
+    }
+  }
 }

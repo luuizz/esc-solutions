@@ -37,6 +37,21 @@
       }
     }
   }
+  @include responsive('laptop', max) {
+    .container {
+      padding-top: 8rem;
+      .content {
+        gap: 2rem;
+        h1 {
+          font-size: 4.8rem;
+          text-wrap: balance;
+        }
+        h2 {
+          font-size: 3.2rem;
+        }
+      }
+    }
+  }
 }
 
 .s-ctas {
@@ -45,6 +60,9 @@
   .container {
     @include flex-start;
     gap: 1.6rem;
+  }
+  @include responsive('laptop', max) {
+    padding: 4rem 0;
   }
 }
 
@@ -73,6 +91,17 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.4rem;
+    }
+  }
+  @include responsive('desktop-small', max) {
+    padding-top: 9.6rem;
+  }
+  @include responsive('laptop', max) {
+    padding-top: 8rem;
+    .container {
+      .top {
+        margin-bottom: 48px;
+      }
     }
   }
 }
@@ -228,6 +257,25 @@
       }
     }
   }
+  @include responsive('desktop-small', max) {
+    .container {
+      gap: 4rem;
+    }
+  }
+  @include responsive('laptop-small', max) {
+    .container {
+      .area-tabs {
+        .content-area {
+          .tab {
+            .left-side {
+              max-width: 45rem;
+              padding: 2rem 0 2rem 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .s-plans {
@@ -279,6 +327,24 @@
       gap: 1.6rem;
     }
   }
+  @include responsive('desktop', 'min') {
+    .banner {
+      height: 64rem;
+    }
+  }
+  @include responsive('desktop-small', max) {
+    .banner {
+      height: 48rem;
+    }
+    .container {
+      padding-top: 4.8rem;
+    }
+  }
+  @include responsive('laptop-small', max) {
+    .banner {
+      height: 40rem;
+    }
+  }
 }
 
 .s-blog {
@@ -296,9 +362,8 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: repeat(2, auto);
-      grid-row: 256px;
+      grid-row: 25.6rem;
       gap: 2.4rem;
-
       .card-post {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
@@ -317,6 +382,30 @@
       .card-post:nth-of-type(3) {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+      }
+    }
+  }
+  @include responsive('desktop-small', max) {
+    padding-top: 9.6rem;
+    .container {
+      .top {
+        h2 {
+          margin-bottom: 3.2rem;
+        }
+      }
+      .area-posts {
+        grid-row: 24rem;
+        .card-post:nth-child(2),
+        .card-post:nth-child(3) {
+          height: 24rem;
+        }
+      }
+    }
+  }
+  @include responsive('laptop-small', max) {
+    .container {
+      .area-posts {
+        gap: 1.6rem;
       }
     }
   }
@@ -361,6 +450,22 @@
         bottom: 0;
         left: 12%;
         z-index: -1;
+      }
+    }
+  }
+  @include responsive('desktop-small', max) {
+    padding-top: 9.6rem;
+    .container {
+      .left-area {
+        h2 {
+          margin: 1.6rem 0;
+        }
+        p {
+          margin-bottom: 2.4rem;
+        }
+      }
+      .right-area {
+        max-width: 58.3rem;
       }
     }
   }

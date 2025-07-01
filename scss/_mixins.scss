@@ -26,16 +26,29 @@
 }
 
 $breakpoints: (
-  'laptop': 1200px,
-  'lap-xs': 1050px,
+  'desktop-large': 1600px,
+  'desktop': 1440px,
+  'desktop-small': 1366px,
+  'laptop': 1280px,
+  'laptop-small': 1050px,
   'tablet': 991px,
   'mobile': 560px,
 );
 
-@mixin responsive($breakpoints-name) {
-  @if map.has-key($breakpoints, $breakpoints-name) {
-    @media (max-width: map.get($breakpoints, $breakpoints-name)) {
-      @content;
+@mixin responsive($breakpoint-name, $direction: max) {
+  @if map.has-key($breakpoints, $breakpoint-name) {
+    $value: map.get($breakpoints, $breakpoint-name);
+
+    @if $direction == max {
+      @media (max-width: $value) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else {
+      @warn "Direção inválida: use 'min' ou 'max'";
     }
   } @else {
     @warn "Breakpoint que você definiu não existe";

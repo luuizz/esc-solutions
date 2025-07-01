@@ -90,6 +90,13 @@ header {
       }
     }
   }
+  @include responsive('desktop-small', max) {
+    .container {
+      .navigation {
+        max-width: 74rem;
+      }
+    }
+  }
   @include responsive(tablet) {
     .container {
       .navigation {
