@@ -111,4 +111,33 @@ footer {
       }
     }
   }
+  @include responsive('tablet', max) {
+    .top-area {
+      padding: 8rem 0 5.6rem;
+      .container {
+        flex-direction: column;
+        gap: 5.6rem;
+        .logo {
+          max-width: 32rem;
+        }
+        .footer-links {
+          flex: initial;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+    .area-copy {
+      .container {
+        p {
+          font-size: 1.2rem;
+        }
+        .social {
+          .social-links {
+            gap: 1.6rem;
+          }
+        }
+      }
+    }
+  }
 }

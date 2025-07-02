@@ -49,6 +49,14 @@
       color: var(--white);
     }
   }
+  @include responsive('tablet', max) {
+    padding: 2.4rem 1.6rem 0rem 1.6rem;
+    .number {
+      span {
+        font-size: 4rem;
+      }
+    }
+  }
 }
 
 .card-post {
@@ -113,6 +121,15 @@
     font-size: 3.2rem;
     height: 7.6rem;
   }
+  @include responsive('tablet', max) {
+    padding: 3.2rem 2.4rem;
+    .content {
+      h3 {
+        font-size: 2.4rem;
+        height: 5.8rem;
+      }
+    }
+  }
 }
 
 .card-post:nth-child(2),
@@ -133,6 +150,14 @@
         font-size: 2rem;
         height: 5.6rem;
         line-height: 130%;
+      }
+    }
+  }
+  @include responsive('tablet', max) {
+    padding: 2.4rem 1.6rem;
+    .content {
+      h3 {
+        font-size: 1.8rem;
       }
     }
   }

@@ -52,6 +52,20 @@
       }
     }
   }
+  @include responsive('tablet', max) {
+    background-position-x: left;
+    .container {
+      padding-top: 5.6rem;
+      padding-bottom: 4.8rem;
+      .content {
+        max-width: 47.8rem;
+        gap: 2.4rem;
+        h1 {
+          font-size: 5.2rem;
+        }
+      }
+    }
+  }
 }
 
 .s-ctas {
@@ -63,6 +77,9 @@
   }
   @include responsive('laptop', max) {
     padding: 4rem 0;
+  }
+  @include responsive('tablet', max) {
+    padding: 4.8rem 0;
   }
 }
 
@@ -101,6 +118,14 @@
     .container {
       .top {
         margin-bottom: 48px;
+      }
+    }
+  }
+  @include responsive('tablet', max) {
+    padding-top: 10rem;
+    .top {
+      h2 {
+        font-size: 4rem;
       }
     }
   }
@@ -276,6 +301,46 @@
       }
     }
   }
+  @include responsive('tablet', max) {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    .container {
+      gap: 4.8rem;
+      .top-area {
+        h2 {
+          margin: 2.4rem 0 1.6rem;
+          font-size: 4rem;
+        }
+      }
+      .area-tabs {
+        width: 100%;
+        max-width: 100%;
+        .content-area {
+          .tab {
+            flex-direction: column;
+            gap: 2.8rem;
+            .left-side {
+              flex: 1;
+              max-width: 100%;
+              padding-right: 2rem;
+            }
+            .right-side {
+              flex: initial;
+              width: 100%;
+              max-width: 100%;
+              height: 45rem;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .s-plans {
@@ -345,6 +410,14 @@
       height: 40rem;
     }
   }
+  @include responsive('tablet', max) {
+    .container {
+      h2 {
+        font-size: 4rem;
+        margin: 2.4rem 0;
+      }
+    }
+  }
 }
 
 .s-blog {
@@ -409,6 +482,21 @@
       }
     }
   }
+  @include responsive('tablet', max) {
+    padding-top: 10rem;
+    .container {
+      .top {
+        h2 {
+          font-size: 4rem;
+          margin-bottom: 48px;
+        }
+      }
+
+      .area-posts {
+        grid-template-columns: 2fr 2fr;
+      }
+    }
+  }
 }
 
 .s-magazine {
@@ -466,6 +554,38 @@
       }
       .right-area {
         max-width: 58.3rem;
+      }
+    }
+  }
+  @include responsive('tablet', max) {
+    padding-top: 10rem;
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .left-area {
+        flex: initial;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        h2,
+        p {
+          text-wrap: balance;
+        }
+        h2 {
+          margin: 2.4rem 0;
+          font-size: 4rem;
+        }
+      }
+      .right-area {
+        flex: initial;
+        width: 100%;
+        max-width: 64rem;
+        height: 34rem;
+        &:before {
+          width: 69rem;
+          bottom: -10rem;
+        }
       }
     }
   }
