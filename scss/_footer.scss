@@ -140,4 +140,60 @@ footer {
       }
     }
   }
+  @include responsive('mobile', max) {
+    .top-area {
+      padding: 8rem 0 7.2rem;
+      .container {
+        align-items: flex-start;
+        .logo {
+          max-width: 25.3rem;
+        }
+        .footer-links {
+          flex: initial;
+          width: 100%;
+          max-width: 100%;
+          flex-direction: column;
+          gap: 4rem;
+          .footer-column {
+            h6 {
+              font-size: 1.4rem;
+            }
+            ul {
+              li {
+                a {
+                  font-size: 1.6rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .area-copy {
+      padding: 5.6rem 0;
+      .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3.2rem;
+        p {
+          font-size: 1.6rem;
+        }
+        .social {
+          .social-links {
+            justify-content: center;
+            gap: 3.2rem;
+            flex-wrap: wrap;
+            li {
+              a {
+                svg {
+                  width: 3.2rem;
+                  height: 3.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

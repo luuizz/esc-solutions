@@ -57,6 +57,15 @@
       }
     }
   }
+  @include responsive('mobile', max) {
+    h4 {
+      height: auto;
+    }
+    h4,
+    p {
+      text-wrap: balance;
+    }
+  }
 }
 
 .card-post {
@@ -127,6 +136,13 @@
       h3 {
         font-size: 2.4rem;
         height: 5.8rem;
+      }
+    }
+  }
+  @include responsive('mobile', max) {
+    .content {
+      h3 {
+        font-size: 2rem;
       }
     }
   }
