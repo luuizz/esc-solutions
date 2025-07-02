@@ -5,7 +5,7 @@ const bg = document.getElementById('tab-bg');
 function moveBgToTab(tab) {
   const tabRect = tab.getBoundingClientRect();
   const containerRect = tab.parentElement.getBoundingClientRect();
-  const offsetLeft = tabRect.left - containerRect.left;
+  const offsetLeft = tab.offsetLeft;
   const width = tabRect.width;
 
   bg.style.transform = `translateX(${offsetLeft}px)`;
