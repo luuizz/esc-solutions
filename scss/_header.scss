@@ -99,6 +99,11 @@ header {
   }
   @include responsive(tablet) {
     .container {
+      .logo {
+        flex: initial;
+        width: 100%;
+        max-width: 14.2rem;
+      }
       .navigation {
         flex: initial;
         width: 100%;
@@ -118,6 +123,7 @@ header {
     }
   }
   @include responsive(mobile) {
+    padding: 1.6rem 0;
     .container {
       .navigation {
         .btn {
