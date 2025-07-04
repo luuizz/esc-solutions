@@ -1,4 +1,4 @@
-<section class="s-magazine">
+<section class="s-magazine" id="revista">
   <div class="container">
     <div class="left-area">
       <?php 
@@ -7,7 +7,7 @@
       ?>
       <h2>Conteúdo exclusivo para quem vive o dia a dia do crédito</h2>
       <p>A ESC+ é a revista digital da ECS Solutions, feita para quem quer se manter informado, atualizado e à frente no mercado de Empresas Simples de Crédito.</p>
-      <a class="btn primary" href="#">Baixe a revista</a>
+      <button data-modal-id="modal-revista" class="btn primary js-btn-modal">Baixe a revista</button>
     </div>
 
     <div class="right-area">
@@ -15,3 +15,5 @@
     </div>
   </div>
 </section>
+
+<?php get_template_part('template-parts/components/modal-magazine') ?>
