@@ -130,6 +130,6 @@ $faq_tab_03 = [
       </div>
     </div>
 
-    <a href="#" class="btn primary">Abrir minha ESC</a>
+    <button data-modal-id="modal-abrir-esc" class="btn primary js-btn-modal">Abrir minha ESC</button>
   </div>
 </section>

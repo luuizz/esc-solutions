@@ -15,10 +15,10 @@
 
 <section class="s-ctas">
   <div class="container">
-    <a href="#" class="btn primary">Abrir minha ESC</a>
-    <a href="#" class="btn secondary with-icon">
+    <button data-modal-id="modal-abrir-esc" class="btn primary js-btn-modal">Abrir minha ESC</button>
+    <button data-modal-id="modal-video" class="btn secondary with-icon js-btn-modal">
       <span>Veja como funciona</span>
       <?= render_svg_icon('play-circle-line', 'icon-play-circle-line') ?>
-    </a>
+    </button>
   </div>
 </section>

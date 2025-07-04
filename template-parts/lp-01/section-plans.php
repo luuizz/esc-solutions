@@ -32,8 +32,7 @@ $feat_plans = [
     </ul>
 
     <div class="buttons">
-      <a href="#" class="btn primary">Começar agora</a>
-      <a href="#" class="btn secondary">Fale conosco</a>
+      <button data-modal-id="modal-abrir-esc" class="btn primary js-btn-modal">Começar agora</button>
     </div>
   </div>
 </section>
