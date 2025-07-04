@@ -3,15 +3,16 @@ $footer_links = [
   [
     'column' => 'Conheça',
     'links' => [
-      [ 'name' => 'Como funciona', 'link' => '#' ],
-      [ 'name' => 'Soluções', 'link' => '#' ],
-      [ 'name' => 'Planos de adesão', 'link' => '#' ],
+      [ 'name' => 'Buscar crédito', 'link' => '#' ],
+      [ 'name' => 'Abrir minha ESC', 'link' => '#' ],
+      [ 'name' => 'ESC System', 'link' => '#' ],
+      [ 'name' => 'Análise de crédito', 'link' => '#' ],
     ]
   ],
   [
     'column' => 'Conteúdo',
     'links' => [
-      [ 'name' => 'Notícias', 'link' => '#' ],
+      [ 'name' => 'Notícias', 'link' => '#blog' ],
       [ 'name' => 'Artigos', 'link' => '#' ],
       [ 'name' => 'Política de Privacidade', 'link' => '#' ],
     ]
@@ -41,7 +42,7 @@ $footer_links = [
       <ul>
         <?php foreach ($section['links'] as $item): ?>
           <li>
-            <a href="<?= $item['link']; ?>" target="_blank">
+            <a href="<?= $item['link']; ?>">
               <span><?= $item['name']; ?></span>
               <?php if (isset($item['icon'])): ?>
                 <?= render_svg_icon(str_replace('icon-', '', $item['icon']), $item['icon']); ?>
