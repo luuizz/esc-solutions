@@ -1,4 +1,4 @@
-<section class="s-blog">
+<section class="s-blog" id="blog">
   <div class="container">
     <div class="top">
       <?php 
