@@ -29,7 +29,8 @@
     &:hover {
       background-color: var(--accent-01);
       color: var(--white);
-      span {
+      span,
+      .text-btn {
         color: inherit;
       }
       svg {
@@ -85,5 +86,13 @@
 }
 
 .none {
+  display: none;
+}
+
+.js-btn-modal {
+  cursor: pointer;
+}
+
+.sr-only {
   display: none;
 }
