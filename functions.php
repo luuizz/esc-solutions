@@ -70,6 +70,15 @@ add_filter('manage_edit-post_sortable_columns', function($columns) {
     return $columns;
 });
 
+//Registrar menus
+function registrar_menu() {
+  register_nav_menus(
+      array(
+          'menu-principal' => __( 'Menu Principal' ),
+      )
+  );
+}
+
 //Remover os links do head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
