@@ -5,4 +5,6 @@
   </div>
 </section>
 
+<?php require_once 'template-parts/components/magazine.php'; ?>
+
 <?php get_footer() ?>
