@@ -27,15 +27,59 @@ header {
       .links {
         @include flex-center;
         gap: 3.2rem;
-        li {
-          a {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--black);
+        .js-btn-modal button,
+        li .menu-link,
+        li a,
+        .has-submenu .menu-top-level {
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: var(--black);
+          transition: all 0.3s ease;
+          line-height: 100%;
+          &:hover {
+            color: var(--accent-01);
+          }
+        }
+        .has-submenu {
+          position: relative;
+          &.active {
+            .menu-top-level {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+          .menu-top-level {
+            @include flex-center;
+            gap: 0.4rem;
+            cursor: pointer;
+            svg {
+              transition: all 0.3s ease;
+            }
+          }
+          .submenu {
+            width: 18.3rem;
+            background-color: var(--white);
+            border-radius: 0.4rem;
+            padding: 2.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: absolute;
+            top: 4.5rem;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
             transition: all 0.3s ease;
-            line-height: 100%;
-            &:hover {
-              color: var(--accent-01);
+            transform: translateY(2rem);
+            // left: 50%;
+            // transform: translateX(-50%);
+            box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            &.active {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: all;
+              transform: translateY(0);
             }
           }
         }
