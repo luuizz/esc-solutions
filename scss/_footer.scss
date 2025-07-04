@@ -185,6 +185,10 @@ footer {
             flex-wrap: wrap;
             li {
               a {
+                &::after {
+                  width: 5rem;
+                  height: 5rem;
+                }
                 svg {
                   width: 3.2rem;
                   height: 3.2rem;
