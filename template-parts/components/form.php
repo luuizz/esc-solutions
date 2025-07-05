@@ -1,8 +1,9 @@
 <form action="">
   <div class="mail-data select-wrapper">
-    <select name="" id="">
-      <option value="">Já possuo ESC</option>
-      <option value="">Não possuo ESC e desejo abrir</option>
+    <select name="escStatus" id="escStatus">
+      <option value="" disabled selected>Selecione uma opção</option>
+      <option value="possui-esc">Já possuo ESC</option>
+      <option value="nao-possui-esc">Não possuo ESC e desejo abrir</option>
       </select>
   </div>
   <div class="mail-data">
