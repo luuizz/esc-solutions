@@ -1,12 +1,17 @@
+<?php
+$titulo_hero = get_field('_titulo_hero');
+$caption_hero = get_field('_caption_hero');
+
+?>
+
 <section class="s-hero">
   <img src="<?php echo get_template_directory_uri(); ?>/assets/element-top.svg" alt="Elemento decorativo">
   <div class="container">
     <div class="content">
-      <?php 
-          require_once __DIR__ . '/../components/caption.php';
-          echo render_caption('soluções de crédito'); 
-      ?>
-    <h1>Já se imaginou como empresário do mercado financeiro</h1>
+    <div class="caption">
+      <span><?php echo $caption_hero; ?></span>
+    </div>
+    <h1><?php echo $titulo_hero; ?></h1>
     <h2>Você pode ser um.</h2>
     <p>Nós temos todas as soluções para você abrir e administrar a sua própria Empresa Simples de Crédito.</p>
     </div>
