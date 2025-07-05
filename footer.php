@@ -23,6 +23,8 @@
   <img src="<?php echo get_template_directory_uri(); ?>/assets/element-footer.svg" alt="Elementos decorativos do rodapé">
 </footer>
 
+<?php get_template_part('template-parts/components/modal-lp01') ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
