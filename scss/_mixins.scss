@@ -1,5 +1,36 @@
 @use 'sass:map';
 
+@mixin transition($time: 0.3s) {
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: $time;
+}
+
+@mixin input-styles {
+  all: unset;
+  background-color: var(--white);
+  flex: 1;
+  max-width: 100%;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--gray-600);
+  font-size: 1.6rem;
+  color: var(--gray-900);
+  line-height: 150%;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:focus,
+  &:focus-within {
+    outline: none;
+    border-color: var(--accent-01);
+    box-shadow: 0 0 0 1px var(--accent-01), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
 @mixin flex-start {
   display: flex;
   align-items: flex-start;
