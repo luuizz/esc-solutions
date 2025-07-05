@@ -39,3 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+const btnFaleConosco = document.querySelector('.js-btn-modal-fale-conosco');
+
+btnFaleConosco.addEventListener('click', (e) => {
+  e.preventDefault();
+  const modal = document.getElementById('modal-abrir-esc');
+  modal?.classList.add('show');
+});
