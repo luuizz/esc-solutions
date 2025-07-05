@@ -96,3 +96,27 @@
 .sr-only {
   display: none;
 }
+
+.list-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem 4.8rem;
+  li {
+    display: flex;
+    align-items: flex-start !important;
+    gap: 1.2rem;
+    .icon-topic,
+    div {
+      flex: none !important;
+      width: 1.8rem;
+      max-width: 1.8rem;
+      height: 1.8rem;
+      @include flex-total-center;
+      border-radius: 0.2rem;
+      border: 1px solid var(--gray-400);
+      box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+      position: relative;
+      top: 0.3rem;
+    }
+  }
+}
