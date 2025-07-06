@@ -361,3 +361,124 @@
     }
   }
 }
+
+.socials-share {
+  span {
+    font-size: 1.6rem;
+    line-height: 100%;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+    display: block;
+  }
+  .socials {
+    @include flex-center;
+    gap: 1.6rem;
+    li {
+      a {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          width: 4rem;
+          height: 4rem;
+          border-radius: 50%;
+          background-color: #cc452d;
+          opacity: 0.2;
+          transition: all 0.3s ease;
+        }
+        &:hover {
+          &::after {
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        svg {
+          width: 2.44rem;
+          height: 2.4rem;
+          path {
+            fill: #cc452d;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-post-related {
+  &:hover {
+    .banner-post {
+      img {
+        transform: scale(1.1);
+      }
+    }
+    .infos {
+      color: var(--accent-05);
+    }
+  }
+  .banner-post {
+    width: 100%;
+    height: 21rem;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include transition;
+    }
+  }
+  .infos {
+    margin-top: 1.6rem;
+    .category {
+      margin-bottom: 0.8rem;
+      span {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: var(--gray-600);
+        font-weight: 400;
+        @include transition;
+        letter-spacing: 0.2rem;
+      }
+    }
+    h3 {
+      font-size: 2.4rem;
+      line-height: 110%;
+      font-weight: 700;
+      height: 5.5rem;
+      margin-bottom: 2.4rem;
+      @include truncate(2);
+      @include transition;
+    }
+    .read-more {
+      font-size: 1.6rem;
+      line-height: 140%;
+      font-weight: 400;
+      color: var(--accent-01);
+      text-decoration: underline;
+      @include transition;
+    }
+  }
+  @include responsive('tablet', max) {
+    display: flex;
+    gap: 2.4rem;
+    .banner-post {
+      height: auto;
+      aspect-ratio: 1/1;
+    }
+    .infos {
+      margin-top: 0;
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.6rem;
+        height: 5.9rem;
+        -webkit-line-clamp: 3;
+      }
+      .read-more {
+        display: block;
+        margin-top: 4rem;
+      }
+    }
+  }
+}
