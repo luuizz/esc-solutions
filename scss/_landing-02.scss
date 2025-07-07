@@ -217,12 +217,15 @@
     }
   }
   @include responsive('tablet', max) {
-    padding-bottom: 0;
+    padding-bottom: 10rem;
     .container {
       h2 {
         width: auto;
       }
     }
+  }
+  @include responsive('mobile', max) {
+    padding-bottom: 8rem;
   }
 }
 
@@ -261,6 +264,13 @@
     }
   }
   @include responsive('tablet', max) {
-    display: none;
+    .poster {
+      height: 45rem;
+    }
+  }
+  @include responsive('mobile', max) {
+    .poster {
+      height: 40rem;
+    }
   }
 }
