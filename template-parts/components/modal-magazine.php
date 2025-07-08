@@ -10,7 +10,7 @@
       <div class="infos">
         <h4>Baixe seu exemplar</h4>
         <span>Insira o seu e-mail e baixe automaticamente o exemplar da ESC+</span>
-        <?php echo do_shortcode('[wpforms id="29"]') ?>
+        <?php echo do_shortcode('[wpforms id="8"]') ?>
       </div>
     </div>
   </div>
