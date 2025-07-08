@@ -6,15 +6,15 @@ $faq_tab_01 = [
   ],
   [
     'question' => 'Inteligência para Decisões',
-    'response' => 'Content 01'
+    'response' => 'Tenha uma visão clara e estratégica da sua ESC. Com nosso painel de Business Intelligence (BI), você acompanha o desempenho geral da operação, além de acessar relatórios completos sobre clientes e contratos, além de resultados operacionais e cálculo de impostos.'
   ],
     [
     'question' => 'App Exclusivo para Clientes',
-    'response' => 'Content 01'
+    'response' => 'Ofereça aos seus clientes um aplicativo completo (iOS e Android) para acompanhamento dos contratos, alertas de vencimento, simulações e muito mais. Profissionalize o relacionamento com seus clientes com uma experiência digital que antes só estava disponível nos grandes bancos.'
   ],
   [
     'question' => 'Análise de Crédito com Inteligência Artificial',
-    'response' => 'Content 01'
+    'response' => 'Nossa análise de crédito combina tecnologia e profundidade: consulta automática à Receita Federal, Serasa e processos judiciais em todas as instâncias. O sistema gera relatórios completos com base nos 5Cs do Crédito, aplicando inteligência artificial para uma avaliação precisa, rápida e totalmente integrada ao sistema de gestão da ESC.'
   ],
 ];
 
@@ -25,19 +25,19 @@ $faq_tab_03 = [
   ],
   [
     'question' => 'Consulta de viabilidade na Junta Comercial e Prefeitura',
-    'response' => 'Content 01'
+    'response' => 'Verificação de disponibilidade do nome e regularidade do endereço para atividades financeiras.'
   ],
   [
     'question' => 'Elaboração do contrato social e protocolo na Junta Comercial',
-    'response' => 'Content 01'
+    'response' => 'Estruturação do ato constitutivo conforme a Lei Complementar 167/2019 e protocolo de registro.'
   ],
   [
     'question' => 'Emissão do CNPJ e inscrição municipal',
-    'response' => 'Content 01'
+    'response' => 'Integração automática via Redesim após deferimento do registro societário. (Até 10 dias úteis para completar as 4 primeiras etapas)'
   ],
   [
-    'question' => 'Inscrição municipal e alvará de funcionamento',
-    'response' => 'Content 01'
+    'question' => 'Solicitação de inscrição municipal e alvará de funcionamento junto à Prefeitura/ Administração',
+    'response' => 'Acompanhamento completo da tramitação junto ao órgão responsável. Prazo variável (conforme o município).'
   ]
 ];
 ?>
