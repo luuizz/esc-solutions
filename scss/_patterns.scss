@@ -118,5 +118,9 @@
       position: relative;
       top: 0.3rem;
     }
+    p {
+      line-height: 140%;
+      color: var(--gray-500);
+    }
   }
 }
