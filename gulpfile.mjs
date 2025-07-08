@@ -81,7 +81,7 @@ gulp.task('pluginjs', pluginsJs);
 
 // Inicia browser-sync
 function browser() {
-  browserSync.init({ proxy: 'esc-solutions.local' });
+  browserSync.init({ proxy: 'escsolutions-ai.local' });
 }
 gulp.task('browser-sync', browser);
 
