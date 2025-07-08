@@ -23,7 +23,9 @@
       }
       form {
         margin-bottom: 1.6rem;
-
+        .signin {
+          margin-bottom: 1.2rem;
+        }
         .mail-data {
           display: flex;
           flex-direction: column;
@@ -39,6 +41,7 @@
 
             select {
               @include input-styles;
+              padding-block: 1.5rem;
               appearance: none;
               padding-right: 4rem;
               cursor: pointer;
@@ -255,6 +258,10 @@
         background-color: var(--white);
         border-radius: 50%;
         @include flex-total-center;
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
       }
     }
   }
