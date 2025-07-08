@@ -65,7 +65,7 @@ $tab_infos_1 = [
                 <?php foreach ($tab['items'] as $item) : ?>
                 <li>
                   <div class="icon-topic">
-                    <? echo render_svg_icon('check-line', 'icon-check-line') ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-check-line.svg" alt="Ícone de um check">
                   </div>
                   <p><?php echo $item; ?></p>
                 </li>

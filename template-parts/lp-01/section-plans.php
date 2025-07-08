@@ -24,7 +24,7 @@ $feat_plans = [
       <?php foreach ($feat_plans as $item): ?>
       <li>
         <div class="icon">
-          <? echo render_svg_icon('check-line', 'icon-check-line') ?>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-check-line.svg" alt="Ícone de um check">
         </div>
         <h5><?= $item['text']; ?></h5>
       </li>
