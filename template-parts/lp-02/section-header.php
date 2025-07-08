@@ -11,7 +11,7 @@
       <p>Transforme a gestão da Sua ESC com tecnologia de ponta, contratos automatizados, decisões inteligentes e experiência digital para seus clientes — tudo em um único sistema.</p>
     </div>
     <div class="right-area">
-      <h4>Comece hoje mesmo! Gratuito para o cadastro de até 5 contratos</h4>
+      <h4 class="js-form-title">Comece hoje mesmo! Gratuito para o cadastro de até 5 contratos</h4>
       <?php get_template_part('template-parts/components/form'); ?>
 
       <!-- Botão do vídeo de demonstração, que abre o modal -->
