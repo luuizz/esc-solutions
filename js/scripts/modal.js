@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const pdfUrl =
-        'http://esc-solutions.local/wp-content/uploads/2025/07/1711976423145Plano20de20AC3A7C3A3o20para20Contruir20Futuros20de20Grandes20Empresas.pdf';
+        'https://stage-escsolutions.doizz.com.br/wp-content/uploads/2025/07/1711976423145Plano20de20AC3A7C3A3o20para20Contruir20Futuros20de20Grandes20Empresas.pdf';
       const link = document.createElement('a');
       link.href = pdfUrl;
       link.download = 'YourCustomPDF.pdf'; //
