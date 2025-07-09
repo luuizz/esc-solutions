@@ -3,17 +3,15 @@ $footer_links = [
   [
     'column' => 'Conheça',
     'links' => [
-      [ 'name' => 'Buscar crédito', 'link' => '#' ],
-      [ 'name' => 'Abrir minha ESC', 'link' => '#' ],
-      [ 'name' => 'ESC System', 'link' => '#' ],
-      [ 'name' => 'Análise de crédito', 'link' => '#' ],
+      [ 'name' => 'Abrir minha ESC', 'link' => '/' ],
+      [ 'name' => 'ESC System', 'link' => '/esc-system' ],
     ]
   ],
   [
     'column' => 'Conteúdo',
     'links' => [
       [ 'name' => 'Notícias', 'link' => '#blog' ],
-      [ 'name' => 'Artigos', 'link' => '#' ],
+      [ 'name' => 'Artigos', 'link' => '#revista' ],
       [ 'name' => 'Política de Privacidade', 'link' => '#' ],
     ]
   ],
