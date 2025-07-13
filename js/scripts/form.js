@@ -4,7 +4,7 @@ const selectEscStatus = document.getElementById('escStatus');
 const nomeTelefoneFields = document.getElementById('nome-telefone-fields');
 const cnpjField = document.getElementById('cnpj-field');
 const submitButton = document.getElementById('submit-button');
-const form = document.querySelector('form');
+const form = document.querySelector('#form-account');
 const titleForm = document.querySelector('.js-form-title');
 const telefoneInput = document.getElementById('telefone');
 
