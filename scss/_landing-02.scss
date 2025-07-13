@@ -118,7 +118,9 @@
     }
   }
   @include responsive('mobile', max) {
-    background-size: 140%;
+    background-size: auto;
+    background-position-x: center;
+    background-image: url('../assets/bg_hero_lp_02.webp');
     .container {
       .right-area {
         padding-block: 4rem;

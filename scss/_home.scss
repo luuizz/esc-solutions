@@ -37,6 +37,9 @@
       }
     }
   }
+  @include responsive('desktop', min) {
+    background-position: top center;
+  }
   @include responsive('laptop', max) {
     .container {
       padding-top: 8rem;
@@ -67,9 +70,8 @@
     }
   }
   @include responsive('mobile', max) {
-    background-position-x: initial;
+    background-position-x: center;
     position: relative;
-    background-image: url('../assets/herobg-mobile.webp');
     &:after {
       content: '';
       position: absolute;
