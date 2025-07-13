@@ -1,4 +1,4 @@
-<form action="">
+<form id="form-account" action="">
   <div class="mail-data select-wrapper">
     <select name="escStatus" id="escStatus">
       <option value="" disabled>Selecione uma opção</option>
