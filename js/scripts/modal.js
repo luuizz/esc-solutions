@@ -24,15 +24,15 @@ document.querySelectorAll('.modal-overlay').forEach((overlay) => {
 
 //Download da revista ao preencher o formulário
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('#wpforms-form-29');
+  const form = document.querySelector('#wpforms-form-8');
   if (form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const pdfUrl =
-        'https://stage-escsolutions.doizz.com.br/wp-content/uploads/2025/07/1711976423145Plano20de20AC3A7C3A3o20para20Contruir20Futuros20de20Grandes20Empresas.pdf';
+        'http://escsolutions-ai.local/wp-content/uploads/2025/07/ESCmagazine_Agosto_2025.pdf';
       const link = document.createElement('a');
       link.href = pdfUrl;
-      link.download = 'YourCustomPDF.pdf'; //
+      link.download = 'ESCmagazine_Agosto_2025.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
