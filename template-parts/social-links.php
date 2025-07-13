@@ -1,28 +1,13 @@
 <?php
 $social_media = [
   [
-    'name' => 'Linkedin',
-    'link' => '#',
-    'icon' => 'icon-linkedin'
-  ],
-  [
     'name' => 'Instagram',
-    'link' => '#',
+    'link' => 'https://www.instagram.com/escsolutions.ai/',
     'icon' => 'icon-instagram'
   ],
   [
-    'name' => 'Facebook',
-    'link' => '#',
-    'icon' => 'icon-facebook'
-  ],
-  [
-    'name' => 'Twitter',
-    'link' => '#',
-    'icon' => 'icon-twitter'
-  ],
-  [
     'name' => 'Youtube',
-    'link' => '#',
+    'link' => 'https://www.youtube.com/@ESCsolutions-ai1',
     'icon' => 'icon-youtube'
   ]
 ];
