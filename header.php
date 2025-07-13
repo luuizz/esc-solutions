@@ -13,11 +13,11 @@
 <header>
   <div class="container">
     <a href="<?php echo home_url(); ?>" class="logo" title="Ir para página Inicial">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.webp" alt="Logo da ESC Solutions">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Logo da ESC Solutions">
     </a>
+    <?php echo get_template_part('template-parts/components/menu-functions'); ?>
 
     <nav class="navigation">
-      <?php echo get_template_part('template-parts/components/menu-functions'); ?>
 
 
       <a href="#" class="btn secondary small with-icon">

@@ -2,7 +2,7 @@
   <div class="top-area">
     <div class="container">
       <a href="<?php echo home_url(); ?>" title="Ir para página Inicial" class="logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.webp" alt="Logo da ESC Solutions">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Logo da ESC Solutions">
       </a>
 
       <?php require_once get_template_directory() . '/template-parts/data.php'; ?>
@@ -12,7 +12,7 @@
 
   <div class="area-copy">
     <div class="container">
-      <p>© <?php echo date('Y'); ?> ESC Solutions - Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+      <p>© <?php echo date('Y'); ?> ESC Solutions é uma marca registrada da Xmodem Tecnologia LTDA - CNPJ: 09.504.616/0001-74</p>
 
       <div class="social">
         <?php require_once get_template_directory() . '/template-parts/social-links.php'; ?>
