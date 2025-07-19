@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const pdfUrl =
-        'http://escsolutions-ai.local/wp-content/uploads/2025/07/ESCmagazine_Agosto_2025.pdf';
+        'https://stage-escsolutions.doizz.com.br/wp-content/uploads/2025/07/ESCmagazine_Agosto_2025.pdf';
       const link = document.createElement('a');
       link.href = pdfUrl;
       link.download = 'ESCmagazine_Agosto_2025.pdf';
