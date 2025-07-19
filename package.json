@@ -6,6 +6,9 @@
   "author": "Luiz Ricardo",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "deploy": "sh ./deploy.sh"
+  },
   "dependencies": {
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
