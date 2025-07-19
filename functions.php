@@ -79,6 +79,37 @@ function registrar_menu() {
   );
 }
 
+add_action('wp_head', function() {
+    if (is_singular()) {
+        $keywords = get_post_meta(get_the_ID(), 'rank_math_focus_keyword', true);
+        if ($keywords) {
+            echo '<meta name="keywords" content="' . esc_attr($keywords) . '">' . "\n";
+        } else {
+            echo '<meta name="keywords" content="ESC, empresa simples de crédito, sistema para ESC, crédito PJ, contrato de empréstimo, antecipação de recebíveis, gestão de crédito, compliance ESC, plataforma ESC, fintech, crédito para pequenas empresas">' . "\n";
+        }
+    }
+});
+
+
+
+acf_add_options_page(array(
+	'page_title' 	=> 'Editar Rodapé',
+	'menu_title'	=> 'Editar Rodapé',
+	'menu_slug' 	=> 'editar-rodape',
+	'capability'	=> 'edit_posts',
+	'icon_url' => 'dashicons-align-center',
+	'redirect'		=> false
+));
+
+acf_add_options_page(array(
+	'page_title' 	=> 'Global',
+	'menu_title'	=> 'Global',
+	'menu_slug' 	=> 'settings',
+	'capability'	=> 'edit_posts',
+	'icon_url' => 'dashicons-admin-generic',
+	'redirect'		=> false
+));
+
 //Remover os links do head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
@@ -94,5 +125,6 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 //Suporte ao tema
 add_theme_support( 'post-thumbnails' );
 add_theme_support('menus');
+add_theme_support('title-tag');
 add_action('wp_enqueue_scripts', 'esc_load_styles');
 add_action( 'wp_enqueue_scripts', 'esc_load_js' );
