@@ -1,7 +1,9 @@
 @use 'mixins' as *;
 
 .s-hero {
-  background: url('../assets/bg_hero.webp') no-repeat center right/cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
   img {
     width: 100%;
   }

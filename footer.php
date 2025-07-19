@@ -1,18 +1,20 @@
+<?php
+$copy = get_field('_copy', 'option');
+?>
+
 <footer>
   <div class="top-area">
     <div class="container">
       <a href="<?php echo home_url(); ?>" title="Ir para página Inicial" class="logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Logo da ESC Solutions">
       </a>
-
-      <?php require_once get_template_directory() . '/template-parts/data.php'; ?>
       <?php require_once get_template_directory() . '/template-parts/links-footer.php'; ?>
     </div>
   </div>
 
   <div class="area-copy">
     <div class="container">
-      <p>© <?php echo date('Y'); ?> ESC Solutions é uma marca registrada da Xmodem Tecnologia LTDA - CNPJ: 09.504.616/0001-74</p>
+      <p>© <?php echo date('Y'); ?> <?php echo $copy; ?></p>
 
       <div class="social">
         <?php require_once get_template_directory() . '/template-parts/social-links.php'; ?>

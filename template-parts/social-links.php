@@ -1,24 +1,14 @@
-<?php
-$social_media = [
-  [
-    'name' => 'Instagram',
-    'link' => 'https://www.instagram.com/escsolutions.ai/',
-    'icon' => 'icon-instagram'
-  ],
-  [
-    'name' => 'Youtube',
-    'link' => 'https://www.youtube.com/@ESCsolutions-ai1',
-    'icon' => 'icon-youtube'
-  ]
-];
-?>
-
 <ul class="social-links">
-  <?php foreach ($social_media as $item): ?>
+<?php if( have_rows('_cadastrar_redes_sociais', 'option') ): ?>
+  <?php while( have_rows('_cadastrar_redes_sociais', 'option') ) : the_row(); 
+    $link = get_sub_field('_link_rede_social');
+    $icon = get_sub_field('_selecione_rede_social'); // ex: 'facebook', 'instagram', etc.
+  ?>
     <li>
-      <a href="<?= $item['link']; ?>" target="_blank" aria-label="<?= $item['name']; ?>">
-        <?= render_svg_icon(str_replace('icon-', '', $item['icon']), $item['icon']); ?>
+      <a href="<?= esc_url($link); ?>" target="_blank" rel="noopener noreferrer">
+        <?= render_svg_icon($icon, 'icon-' . $icon); ?>
       </a>
     </li>
-  <?php endforeach; ?>
+  <?php endwhile; ?>
+<?php endif; ?>
 </ul>

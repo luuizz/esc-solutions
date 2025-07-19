@@ -1,26 +1,32 @@
+<?php
+$caption = get_field('_legenda_dobra_02');
+$titulo = get_field('_titulo_dobra_02');
+$descricao = get_field('_descricao_dobra_02');
+?>
+
 <section class="s-how-work">
   <div class="container">
     <div class="top">
-      <?php 
-      require_once __DIR__ . '/../components/caption.php';
-      echo render_caption('Como funciona?'); 
-      ?>
-      <h2>Abra sua ESC do zero com quem entende do assunto</h2>
-      <p>Se tornar um empresário de crédito é mais fácil do que você imagina</p>
+      <div class="caption">
+        <span><?php echo esc_html($caption); ?></span>
+      </div>
+      <h2><?php echo esc_html($titulo); ?></h2>
+      <p><?php echo esc_html($descricao); ?></p>
     </div>
 
     <div class="area-cards">
-      <?php require_once __DIR__ . '/../data.php';
-      foreach ($cards_process as $item): ?>
+      <?php 
+      $i = 1;
+      if( have_rows('_cadastrar_etapas') ): while ( have_rows('_cadastrar_etapas') ) : the_row(); 
+      ?>
       <div class="card-item">
-        <h4><?= $item['title']; ?></h4>
-        <p><?= $item['text']; ?></p>
+        <h4><?php echo get_sub_field('_titulo_etapa'); ?></h4>
+        <p><?php echo get_sub_field('_descricao_etapa'); ?></p>
         <div class="number">
-          <span>0<?= array_search($item, $cards_process) + 1; ?></span>
+          <span><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?></span>
         </div>
       </div>
-      <?php endforeach; ?>
-
+      <?php $i++; endwhile; else : endif;?>
     </div>
   </div>
 </section>

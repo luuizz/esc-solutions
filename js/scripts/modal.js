@@ -22,24 +22,6 @@ document.querySelectorAll('.modal-overlay').forEach((overlay) => {
   });
 });
 
-//Download da revista ao preencher o formulário
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('#wpforms-form-8');
-  if (form) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const pdfUrl =
-        'https://stage-escsolutions.doizz.com.br/wp-content/uploads/2025/07/ESCmagazine_Agosto_2025.pdf';
-      const link = document.createElement('a');
-      link.href = pdfUrl;
-      link.download = 'ESCmagazine_Agosto_2025.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
-  }
-});
-
 const btnFaleConosco = document.querySelector('.js-btn-modal-fale-conosco');
 
 btnFaleConosco.addEventListener('click', (e) => {

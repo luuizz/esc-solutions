@@ -1,7 +1,6 @@
 @use 'mixins' as *;
 
 .s-lp-02 {
-  background-image: url('../assets/banner_hero_lp02.webp');
   .container {
     padding-block: 10rem;
     @include flex-start-justify;
@@ -120,7 +119,6 @@
   @include responsive('mobile', max) {
     background-size: auto;
     background-position-x: center;
-    background-image: url('../assets/bg_hero_lp_02.webp');
     .container {
       .right-area {
         padding-block: 4rem;

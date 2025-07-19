@@ -33,51 +33,64 @@ $tab_infos_1 = [
       ]
     ]
 ];
+$caption = get_field('_legenda_sistema');
+$titulo = get_field('_titulo_sistema');
+
 ?>
 
 <section class="s-solutions s-system">
   <div class="container">
     <div class="top-area">
-      <?php 
-      require_once __DIR__ . '/../components/caption.php';
-      echo render_caption('conheça nosso sistema'); 
-      ?>
-      <h2>Principais benefícios do ESC System</h2>
+      <div class="caption">
+        <span><?php echo esc_html($caption); ?></span>
+      </div>
+      <h2><?php echo esc_html($titulo); ?></h2>
     </div>
 
     <div class="area-tabs">
       <div class="area-buttons">
         <div class="tab-background" id="tab-bg"></div>
-        <button class="btn-tab active">Gestão de contratos</button>
-        <button class="btn-tab">Inteligência em dados</button>
-        <button class="btn-tab">App para clientes</button>
+        <?php if( have_rows('_cadastrar_abas') ): while ( have_rows('_cadastrar_abas') ) : the_row(); ?>
+          <button class="btn-tab active"><?php echo get_sub_field('_nome_aba') ?></button>
+        <?php endwhile; else : endif;?>
       </div>
 
       <div class="content-area">
-        <?php foreach ($tab_infos_1 as $index => $tab) : ?>
-        <main class="tab <?php echo $index === 0 ? 'active' : ''; ?>" id="tab-<?php echo $index + 1; ?>">
+        <?php if( have_rows('_cadastrar_abas') ): 
+          $tab_index = 1;
+          while ( have_rows('_cadastrar_abas') ) : the_row(); 
+          $icone = get_sub_field('_icone_aba');
+          $titulo = get_sub_field('_titulo_aba');
+          $imagem = get_sub_field('_imagem_aba');
+        ?>
+        <main class="tab <?= $tab_index === 1 ? 'active' : '' ?>" id="tab-<?php echo $tab_index; ?>">
             <div class="left-side">
               <div class="icon">
-                <?php echo render_svg_icon($tab['icon'], 'icon-' . $tab['icon']); ?>
+                <?php if ($icone) {
+                  $url = $icone['url'];
+                  $alt = $icone['alt']; 
+                  ?>
+                <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
+                <?php } ?>
               </div>
-              <h3><?php echo $tab['title']; ?></h3>
+              <h3><?php echo esc_html($titulo); ?></h3>
               <ul class="list-topics">
-                <?php foreach ($tab['items'] as $item) : ?>
+                <?php if( have_rows('_cadastrar_topicos_aba') ): while ( have_rows('_cadastrar_topicos_aba') ) : the_row(); ?>
                 <li>
                   <div class="icon-topic">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-check-line.svg" alt="Ícone de um check">
                   </div>
-                  <p><?php echo $item; ?></p>
+                  <p><?php echo get_sub_field('_texto_topico'); ?></p>
                 </li>
-                <?php endforeach; ?>
+                <?php endwhile; else : endif;?>
               </ul>
             </div>
 
             <div class="right-side">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/print_system.webp" alt="Mulher digitando no computador">
+              <img src="<?php echo esc_url($imagem['url']); ?>" alt="<?php echo esc_attr($imagem['alt']); ?>" title="<?php echo esc_attr($imagem['title']); ?>">
             </div>
         </main>
-        <?php endforeach; ?>
+        <?php $tab_index++; endwhile; else : endif;?>
       </div>
     </div>
 

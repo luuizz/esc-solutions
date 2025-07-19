@@ -1,54 +1,58 @@
-<?php
-$footer_links = [
-  [
-    'column' => 'Conheça',
-    'links' => [
-      [ 'name' => 'Abrir minha ESC', 'link' => '/' ],
-      [ 'name' => 'ESC System', 'link' => '/esc-system' ],
-    ]
-  ],
-  [
-    'column' => 'Conteúdo',
-    'links' => [
-      [ 'name' => 'Notícias', 'link' => '#blog' ],
-      [ 'name' => 'Revista ESC+', 'link' => '#revista' ],
-      [ 'name' => 'Política de Privacidade', 'link' => '#' ],
-    ]
-  ],
-  [
-    'column' => 'Atendimento',
-    'links' => [
-      [
-        'name' => '(61) 98158-4546',
-        'link' => 'https://api.whatsapp.com/send?phone=5561993781017&text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20or%C3%A7amento.',
-        'icon' => 'icon-whatsapp-line'
-      ],
-      [
-        'name' => 'faleconosco@escsolutions.ai',
-        'link' => 'mailto:faleconosco@escsolutions.ai',
-      ],
-    ]
-  ]
-];
-
-?>
-
 <div class="footer-links">
-  <?php foreach ($footer_links as $section): ?>
+  <div class="footer-links">
+    <?php if( have_rows('_cadastrar_links_col', 'option') ): while ( have_rows('_cadastrar_links_col', 'option') ) : the_row();
+    $titulo = get_sub_field('_titulo_coluna');
+    
+    ?>
     <div class="footer-column">
-      <h6><?= $section['column']; ?></h6>
+      <h6><?= $titulo ?></h6>
       <ul>
-        <?php foreach ($section['links'] as $item): ?>
+        <?php if ( have_rows('_cadastrar_link', 'option') ): while ( have_rows('_cadastrar_link', 'option') ) : the_row();
+          $link = get_sub_field('_link');
+          $label = get_sub_field('_label_link');
+        ?>
           <li>
-            <a href="<?= $item['link']; ?>">
-              <span><?= $item['name']; ?></span>
-              <?php if (isset($item['icon'])): ?>
-                <?= render_svg_icon(str_replace('icon-', '', $item['icon']), $item['icon']); ?>
-              <?php endif; ?>
+            <?php 
+            if ($link) :
+              $link_url = $link['url'];
+            ?>
+            <a href="<?= $link_url ?>">
+              <span><?= $label ?></span>
             </a>
+            <?php endif; ?>
           </li>
-        <?php endforeach; ?>
+        <?php endwhile; else : endif; ?>
       </ul>
     </div>
-  <?php endforeach; ?>
+    <?php endwhile; else : endif;?>
+    <div class="footer-column">
+      <h6>Atendimento</h6>
+      <ul>
+        <li>
+          <?php
+              $whatsapp_configs = get_field('_whatsapp_configs', 'option');
+              if ($whatsapp_configs) :
+              $raw_number = $whatsapp_configs['numero_whatsapp'];
+              $clean_number = preg_replace('/\D+/', '', $raw_number);
+              if (strlen($clean_number) === 11) {
+                $clean_number = '55' . $clean_number;
+              }
+              $message = $whatsapp_configs['_mensagem_whatsapp'];
+              $encoded_message = urlencode($message);
+              $whatsapp_url = "https://api.whatsapp.com/send?phone={$clean_number}&text={$encoded_message}";
+          ?>
+          <a href="<?= esc_url($whatsapp_url); ?>">
+            <span><?= esc_html($whatsapp_configs['numero_whatsapp']); ?></span>
+            <? echo render_svg_icon('whatsapp-line', 'icon-whatsapp-line') ?>
+            </a>
+          </li>
+          <?php endif; ?>
+          <li>
+            <a href="mailto:<?php echo get_field('_e-mail', 'option') ?>">
+              <span><?php echo get_field('_e-mail', 'option') ?></span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
 </div>
