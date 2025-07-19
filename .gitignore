@@ -60,3 +60,6 @@ wp-content/wp-cache-config.php
 *.swp
 *.bak
 *.tmp
+
+# Deploy
+deploy.sh
