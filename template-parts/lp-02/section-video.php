@@ -1,8 +1,8 @@
 <?php
-$imagem = get_field('_poster_video');
+$imagem = get_field('_poster_video_2', 'option');
 ?>
 
-<section class="s-video js-btn-modal" data-modal-id="modal-video">
+<section class="s-video js-btn-modal" data-modal-id="modal-video-02">
   <div class="poster" id="js-video-poster">
     <img src="<?php echo esc_url($imagem['url']); ?>" alt="<?php echo esc_attr($imagem['alt']); ?>" title="<?php echo esc_attr($imagem['title']); ?>">
     <button class="btn-play js-btn-modal" data-modal-id="modal-video">

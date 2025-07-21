@@ -16,6 +16,6 @@ get_header();
 
 <?php require_once 'template-parts/components/magazine.php'; ?>
 
-<?php get_template_part('template-parts/components/modal-video') ?>
+<?php get_template_part('template-parts/components/modal-video-01') ?>
 
 <?php get_footer(); ?>

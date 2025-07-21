@@ -24,7 +24,7 @@ $banner_mobile = get_field('_banner_mobile_hero');
 <section class="s-ctas">
   <div class="container">
     <button data-modal-id="modal-abrir-esc" class="btn primary js-btn-modal">Abrir minha ESC</button>
-    <button data-modal-id="modal-video" class="btn secondary with-icon js-btn-modal">
+    <button data-modal-id="modal-video-01" class="btn secondary with-icon js-btn-modal">
       <span>Veja como funciona</span>
       <?= render_svg_icon('play-circle-line', 'icon-play-circle-line') ?>
     </button>

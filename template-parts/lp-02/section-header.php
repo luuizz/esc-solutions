@@ -23,7 +23,7 @@ $banner_mobile = get_field('_banner_mobile_hero');
       <?php get_template_part('template-parts/components/form'); ?>
 
       <!-- Botão do vídeo de demonstração, que abre o modal -->
-      <button data-modal-id="modal-video" class="btn secondary with-icon js-btn-modal">
+      <button data-modal-id="modal-video-01" class="btn secondary with-icon js-btn-modal">
         <span>Veja uma demonstração</span>
         <?= render_svg_icon('play-circle-line', 'icon-play-circle-line') ?>
       </button>
