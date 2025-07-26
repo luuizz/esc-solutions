@@ -43,7 +43,7 @@
           ?>
           <a href="<?= esc_url($whatsapp_url); ?>">
             <span><?= esc_html($whatsapp_configs['numero_whatsapp']); ?></span>
-            <? echo render_svg_icon('whatsapp-line', 'icon-whatsapp-line') ?>
+            <img width="16" height="16" src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-whatsapp-line.svg" alt="Ícone do whatsapp">
             </a>
           </li>
           <?php endif; ?>
