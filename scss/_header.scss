@@ -231,6 +231,9 @@ header {
             border-top: 1px solid var(--gray-200);
             animation: moveIn 0.3s ease forwards;
             transition-delay: 0.2s;
+            padding-inline: 0;
+            width: 100%;
+            box-shadow: none;
             .submenu-item {
               &:not(:last-child) {
                 margin-bottom: 2.4rem;

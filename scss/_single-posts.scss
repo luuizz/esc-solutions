@@ -7,6 +7,14 @@
     .top-area {
       @include flex-center-justify;
       margin-bottom: 3.2rem;
+      .link-home {
+        font-size: 1.4rem;
+        text-decoration: underline;
+        @include transition;
+        &:hover {
+          color: var(--accent-01);
+        }
+      }
       .breadcrumbs {
         @include flex-center;
         gap: 0.2rem;
@@ -121,7 +129,7 @@
     .container {
       .top-area {
         margin-bottom: 1.6rem;
-        flex-direction: column-reverse;
+        flex-direction: column;
         .breadcrumbs {
           margin-top: 1.6rem;
           flex-direction: column;

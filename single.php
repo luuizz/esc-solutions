@@ -3,6 +3,9 @@
 <section class="s-hero-posts">
   <div class="container">
     <div class="top-area">
+      <a class="link-home" href="<?php echo home_url(); ?>">
+        Voltar para página inicial
+      </a>
       <ul class="breadcrumbs">
         <li>
           <a href="<?php echo home_url(); ?>">Home</a>
@@ -16,11 +19,6 @@
           <span><?php the_title(); ?></span>
         </li>
       </ul>
-
-      <a class="btn secondary small with-icon" href="<?php echo home_url(); ?>">
-        <span>Voltar para página inicial</span>
-        <?php echo render_svg_icon('chevron', 'icon-chevron') ?>
-      </a>
     </div>
 
     <div class="main-area">

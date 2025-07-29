@@ -23,6 +23,15 @@ function initTabsSection(section) {
       contents[index].classList.add('active');
 
       moveBgToTab(tab);
+
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        tab.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest',
+        });
+      }
     });
   });
 
