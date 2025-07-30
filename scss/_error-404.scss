@@ -1,8 +1,8 @@
 @use 'mixins' as *;
 
 .s-404 {
-  padding-block: 12rem;
-  border-bottom: 1px solid var(--gray-200);
+  padding: 9.6rem 0 12rem;
+  border-block: 1px solid var(--gray-200);
   .container {
     @include flex-center-justify;
     flex-direction: column;
@@ -18,7 +18,7 @@
     p {
       width: 45.6rem;
       font-size: 1.8rem;
-      margin-bottom: 5.6rem;
+      margin-block: 5.6rem;
       color: var(--gray-500);
     }
   }
