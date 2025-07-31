@@ -383,6 +383,14 @@
       .area-tabs {
         width: 100%;
         max-width: 100%;
+        .area-buttons {
+          white-space: nowrap;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          .btn-tab {
+            scroll-snap-align: center;
+          }
+        }
         .content-area {
           .tab {
             flex-direction: column;
@@ -425,14 +433,6 @@
         }
       }
       .area-tabs {
-        .area-buttons {
-          white-space: nowrap;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          .btn-tab {
-            scroll-snap-align: center;
-          }
-        }
         .content-area {
           .tab {
             gap: 3.2rem;
