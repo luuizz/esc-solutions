@@ -1,3 +1,11 @@
+function stopIframeVideo(modal) {
+  const iframes = modal.querySelectorAll('iframe');
+  iframes.forEach((iframe) => {
+    const src = iframe.src;
+    iframe.src = src;
+  });
+}
+
 document.querySelectorAll('.js-btn-modal').forEach((btn) => {
   btn.addEventListener('click', () => {
     const modalId = btn.dataset.modalId;
@@ -10,6 +18,7 @@ document.querySelectorAll('.js-btn-close').forEach((btn) => {
   btn.addEventListener('click', () => {
     const modal = btn.closest('.modal');
     modal?.classList.remove('show');
+    stopIframeVideo(modal);
   });
 });
 
@@ -17,7 +26,9 @@ document.querySelectorAll('.js-btn-close').forEach((btn) => {
 document.querySelectorAll('.modal-overlay').forEach((overlay) => {
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
-      overlay.closest('.modal')?.classList.remove('show');
+      const modal = overlay.closest('.modal');
+      modal?.classList.remove('show');
+      stopIframeVideo(modal);
     }
   });
 });
