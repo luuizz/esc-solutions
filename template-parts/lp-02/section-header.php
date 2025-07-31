@@ -5,6 +5,8 @@ $subtitulo = get_field( '_subtitulo_hero' );
 $texto = get_field( '_descricao_hero' );
 $banner_desktop = get_field('_banner_desktop_hero');
 $banner_mobile = get_field('_banner_mobile_hero');
+$link_botao = get_field('_link_do_botao');
+$label_botao = get_field('_label_botao');
 ?>
 
 <section class="s-hero s-lp-02" id="form">
@@ -23,10 +25,17 @@ $banner_mobile = get_field('_banner_mobile_hero');
       <?php get_template_part('template-parts/components/form'); ?>
 
       <!-- Botão do vídeo de demonstração, que abre o modal -->
-      <button data-modal-id="modal-video-02" class="btn secondary with-icon js-btn-modal">
-        <span>Veja uma demonstração</span>
-        <?= render_svg_icon('play-circle-line', 'icon-play-circle-line') ?>
-      </button>
+      
+      <?php if ($link_botao) {
+        $link_url = $link_botao['url'];
+        $link_title = $link_botao['title'];
+        $link_target = $link_botao['target'] ? $link_botao['target'] : '_self';
+        
+        ?>
+      <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"  class="btn secondary with-icon">
+        <span><?php echo esc_html($label_botao); ?></span>
+      </a>
+      <?php } ?>
     </div>
   </div>
 </section>
