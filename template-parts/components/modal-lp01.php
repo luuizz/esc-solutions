@@ -12,10 +12,23 @@
         <span>Preencha os dados abaixo para agendar a reunião com um de nossos representantes</span>
         <?php echo do_shortcode('[wpforms id="25"]') ?>
         <p class="separator">Ou</p>
-        <a href="https://api.whatsapp.com/send?phone=5561993781017&text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20or%C3%A7amento" target="_blank" class="btn secondary with-icon">
-          <div class="text-btn">Falar no WhatsApp</div>
-          <?php echo render_svg_icon('whatsapp-line', 'icon-whatsapp-line') ?>
-        </a>
+        <?php
+              $whatsapp_configs = get_field('_whatsapp_configs', 'option');
+              if ($whatsapp_configs) :
+              $raw_number = $whatsapp_configs['numero_whatsapp'];
+              $clean_number = preg_replace('/\D+/', '', $raw_number);
+              if (strlen($clean_number) === 11) {
+                $clean_number = '55' . $clean_number;
+              }
+              $message = $whatsapp_configs['_mensagem_whatsapp'];
+              $encoded_message = urlencode($message);
+              $whatsapp_url = "https://api.whatsapp.com/send?phone={$clean_number}&text={$encoded_message}";
+          ?>
+          <a class="btn secondary with-icon js-whatsapp-link" target="_blank" href="<?= esc_url($whatsapp_url); ?>">
+            <div class="text-btn">Falar no WhatsApp</div>
+            <?php echo render_svg_icon('whatsapp-line', 'icon-whatsapp-line') ?>
+          </a>
+      <?php endif; ?>
       </div>
     </div>
   </div>

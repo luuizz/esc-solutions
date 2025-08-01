@@ -8,6 +8,14 @@ const form = document.querySelector('#form-account');
 const titleForm = document.querySelector('.js-form-title');
 const telefoneInput = document.getElementById('telefone');
 
+const wpButton = document.querySelector('#wpforms-submit-25');
+
+if (wpButton) {
+  wpButton.addEventListener('click', function () {
+    gtag_report_conversion();
+  });
+}
+
 // Máscara CNPJ
 if (cnpjInput) {
   cnpjInput.addEventListener('input', function (e) {
@@ -93,6 +101,8 @@ if (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    gtag_report_conversion();
+
     const escStatus = selectEscStatus?.value;
     const cnpj = cnpjInput?.value || '';
     const email = emailInput?.value || '';
@@ -136,5 +146,9 @@ if (form) {
 
     localStorage.setItem('formData', JSON.stringify(formData));
     alert('Dados salvos com sucesso!');
+
+    setTimeout(() => {
+      form.submit();
+    }, 300);
   });
 }

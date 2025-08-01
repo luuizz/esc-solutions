@@ -1,4 +1,4 @@
-<form id="form-account" action="">
+<form id="form-account" action="" onsubmit="gtag_report_conversion();">
   <div class="mail-data select-wrapper">
     <select name="escStatus" id="escStatus">
       <option value="" disabled>Selecione uma opção</option>
