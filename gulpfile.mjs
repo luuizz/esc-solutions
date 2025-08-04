@@ -7,6 +7,9 @@ import concat from 'gulp-concat';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
 import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const sass = gulpSass(dartSass);
 
@@ -81,7 +84,7 @@ gulp.task('pluginjs', pluginsJs);
 
 // Inicia browser-sync
 function browser() {
-  browserSync.init({ proxy: 'escsolutions-ai.local' });
+  browserSync.init({ proxy: process.env.PROXY_URL });
 }
 gulp.task('browser-sync', browser);
 
