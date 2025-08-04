@@ -2,6 +2,11 @@
 
 Este repositório contém o código-fonte do tema WordPress desenvolvido para o site da empresa **ESC Solutions**. A estrutura foi organizada para facilitar o desenvolvimento e manutenção, utilizando ferramentas modernas como **Gulp** e **SCSS**.
 
+## 🧰 Ambiente Local
+
+Antes de começar, é necessário ter um ambiente WordPress local espelhando a versão de produção (mesmo banco de dados e plugins).  
+Você pode utilizar ferramentas como o **WP All-in-One Migration** para importar/exportar facilmente o ambiente.
+
 ---
 
 ## 📦 Instalação
@@ -58,7 +63,7 @@ Os estilos são escritos em SCSS. Para manter a organização, use:
 ```
 
 - Arquivos SCSS devem seguir o padrão `_nomedoarquivo.scss`.
-- O Gulp compila e minifica automaticamente para `style.css`, incluindo **autoprefixer**.
+- O Gulp compila e minifica automaticamente para `main.css`, incluindo **autoprefixer**.
 
 ---
 
@@ -139,6 +144,30 @@ etc.
 ```
 
 ---
+
+## 🚀 Deploy
+
+Para publicar alterações no ambiente de produção, há duas opções:
+
+### Manualmente via FTP
+
+Após realizar edições, basta substituir **somente os arquivos modificados** no servidor via FTP.
+
+### Automaticamente com `deploy.sh`
+
+Um script de deploy automatizado está disponível. Para usá-lo:
+
+1. Abra o arquivo `deploy.sh`
+2. Configure os dados do servidor de produção (host, usuário, caminho, etc.)
+3. Execute o comando:
+
+   ```bash
+   yarn deploy
+   # ou
+   npm run deploy
+   ```
+
+> O script estava configurado para o ambiente de staging. Altere conforme necessário ou implemente uma estratégia mais robusta de deploy se desejar.
 
 ## 🧑‍💻 Autor
 
