@@ -145,10 +145,7 @@ if (form) {
     };
 
     localStorage.setItem('formData', JSON.stringify(formData));
-    alert('Dados salvos com sucesso!');
 
-    setTimeout(() => {
-      form.submit();
-    }, 300);
+    window.location.href = `https://system.escsolutions.ai/admin/register?cnpj=${cnpj}&email=${email}`
   });
 }
