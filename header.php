@@ -18,12 +18,19 @@
 
     <nav class="navigation">
 
-
-      <a href="#" class="btn secondary small with-icon">
-        <span>Login</span>
+      <?php
+      $link_login = get_field('_link_de_login', 'option');
+      if ($link_login) {
+        $link_url = $link_login['url'];
+        $link_title = $link_login['title'];
+        $link_target = $link_login['target'] ? $link_login['target'] : '_self';
+        $rel = $link_login['target'] ? 'noopener noreferrer' : '';
+        ?>
+      <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" rel="<?php echo esc_attr($rel); ?>"  class="btn secondary small with-icon">
+        <span><?php echo esc_html($link_title); ?></span>
         <?= render_svg_icon('user', 'icon-user') ?>
       </a>
-
+      <?php } ?>
       <button id="js-btn-menu" class="btn-menu btn secondary small with-icon" tabindex="0" aria-label="Abrir Menu" role="button" aria-controls="navigation">
         <span class="btn-mobile-inner"></span>
       </button>
