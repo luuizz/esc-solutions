@@ -3,22 +3,11 @@
     <select name="escStatus" id="escStatus">
       <option value="" disabled>Selecione uma opção</option>
       <option value="possui-esc" selected>Já possuo ESC</option>
-      <option value="nao-possui-esc">Não possuo ESC e desejo abrir</option>
       </select>
   </div>
     <!-- CNPJ Field -->
   <div class="mail-data" id="cnpj-field">
-    <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ" maxlength="18">
-  </div>
-
-  <!-- Nome e Telefone agrupados -->
-  <div class="signin" id="nome-telefone-fields">
-    <div class="mail-data">
-      <input type="text" id="name" name="name" placeholder="Nome">
-    </div>
-    <div class="mail-data">
-      <input type="phone" id="telefone" name="telefone" placeholder="Telefone">
-    </div>
+    <input type="text" id="cnpj" name="cnpj" placeholder="Digite o CNPJ da sua ESC" maxlength="18">
   </div>
 
   <!-- E-mail -->
