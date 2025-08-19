@@ -62,7 +62,6 @@ if (form) {
       }
     }
 
-<<<<<<< HEAD
     if (escStatus === 'nao-possui-esc') {
       if (!name.trim()) {
         alert('Nome é obrigatório.');
@@ -88,9 +87,6 @@ if (form) {
 
     localStorage.setItem('formData', JSON.stringify(formData));
 
-    window.location.href = `https://system.escsolutions.ai/admin/register?cnpj=${cnpj}&email=${email}`
-=======
     window.location.href = `https://system.escsolutions.ai/admin/register?cnpj=${cnpj}&email=${email}`;
->>>>>>> 87bc057 (feat: removido linhas desnecessárias e implementado a lógica para redirecionamento e conexão com a plataforma)
   });
 }

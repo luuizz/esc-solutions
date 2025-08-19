@@ -26,7 +26,6 @@ $copy = get_field('_copy', 'option');
 </footer>
 
 <?php get_template_part('template-parts/components/modal-lp01') ?>
-
 <?php wp_footer(); ?>
 </body>
 </html>
