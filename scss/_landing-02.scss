@@ -201,7 +201,6 @@
 }
 
 .s-start-lp02 {
-  padding-bottom: 12rem;
   .container {
     h2 {
       text-align: center;
@@ -225,9 +224,6 @@
         width: auto;
       }
     }
-  }
-  @include responsive('mobile', max) {
-    padding-bottom: 8rem;
   }
 }
 

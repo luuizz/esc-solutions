@@ -7,17 +7,6 @@ $banner_plano = get_field('_banner_plano');
 ?>
 
 <section class="s-plans">
-  <div class="banner">
-    <?php
-      if ($banner_plano) {
-        $url = $banner_plano['url'];
-        $title = $banner_plano['title'];
-        $alt = $banner_plano['alt'];
-    ?>
-    <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>" title="<?php echo esc_attr($title); ?>">
-    <?php } ?>
-
-  </div>
   <div class="container">
       <div class="caption">
         <span><?php echo esc_html($caption); ?></span>

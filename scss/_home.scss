@@ -457,17 +457,6 @@
 }
 
 .s-plans {
-  padding-bottom: 8rem;
-  .banner {
-    width: 100%;
-    max-width: 100%;
-    height: 40rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
   .container {
     padding-top: 64px;
     @include flex-center;
@@ -506,22 +495,9 @@
       gap: 1.6rem;
     }
   }
-  @include responsive('desktop', 'min') {
-    .banner {
-      height: 64rem;
-    }
-  }
   @include responsive('desktop-small', max) {
-    .banner {
-      height: 48rem;
-    }
     .container {
       padding-top: 4.8rem;
-    }
-  }
-  @include responsive('laptop-small', max) {
-    .banner {
-      height: 40rem;
     }
   }
   @include responsive('tablet', max) {
@@ -533,9 +509,6 @@
     }
   }
   @include responsive('mobile', max) {
-    .banner {
-      height: 25rem;
-    }
     .container {
       h2 {
         text-align: center;

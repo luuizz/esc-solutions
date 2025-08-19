@@ -7,16 +7,6 @@ $texto = get_field('_texto_cta');
 ?>
 
 <section class="s-plans s-start-lp02">
-  <div class="banner">
-  <?php
-  if ($imagem) {
-    $url = $imagem['url'];
-    $alt = $imagem['alt']; 
-    $title = $imagem['title'];
-    ?>
-    <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>" title="<?php echo esc_attr($title); ?>">
-  <?php } ?>
-  </div>
   <div class="container">
     <div class="caption">
       <span><?php echo esc_html($caption); ?></span>

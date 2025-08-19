@@ -8,9 +8,9 @@ get_header();
 
 <?php require_once 'template-parts/lp-02/section-system.php'; ?>
 
+<?php require_once 'template-parts/lp-02/section-video.php'; ?>
 <?php require_once 'template-parts/lp-02/section-features.php'; ?>
 
-<?php require_once 'template-parts/lp-02/section-video.php'; ?>
 
 <?php require_once 'template-parts/components/blog.php'; ?>
 
