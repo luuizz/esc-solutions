@@ -2,31 +2,34 @@
 $habilitar_video_hospedado = get_field('_habilitar_video_hospedado_1', 'option');
 
 $poster = get_field('_poster_video_1', 'option');
-
-$video = get_field('_video_hospedado_1', 'option');
+$video  = get_field('_video_hospedado_1', 'option');
 $video_url = is_array($video) ? $video['url'] : $video;
 
 $iframe = get_field('_video_embedado_1', 'option');
+$iframe_final = ''; // inicializa vazio
 
-if ($iframe && !$habilitar_video_hospedado) {
-    preg_match('/src="(.+?)"/', $iframe, $matches);
+if ($iframe) {
+    // Regex para extrair o ID do vídeo do YouTube
+    preg_match(
+        '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/',
+        $iframe,
+        $matches
+    );
 
+    // Se encontrou o ID, monta o iframe
     if (!empty($matches[1])) {
-        $src = $matches[1];
+        $video_id = $matches[1];
 
-        $params = array(
-            'controls'  => 0,
-            'hd'        => 1,
-            'autohide'  => 1
-        );
-        $new_src = add_query_arg($params, $src);
-
-        $iframe = str_replace($src, $new_src, $iframe);
-        $iframe = str_replace('></iframe>', ' frameborder="0"></iframe>', $iframe);
+        $iframe_final = '<iframe 
+            src="https://www.youtube-nocookie.com/embed/' . esc_attr($video_id) . '?vq=hd1080&modestbranding=1&rel=0&fs=0&color=white&controls=0&disablekb=1" 
+            width="560" 
+            height="315" 
+            frameborder="0"
+            allowfullscreen>
+        </iframe>';
     }
 }
 ?>
-
 
 <div class="modal" id="modal-video-01">
   <div class="modal-overlay">
@@ -41,8 +44,8 @@ if ($iframe && !$habilitar_video_hospedado) {
         <?php if ($habilitar_video_hospedado): ?>
           <video src="<?php echo esc_url($video['url']); ?>" controls poster="<?php echo esc_url($poster['url']); ?>" style="max-width: 100%; height: auto; aspect-ratio: auto">
           </video>
-        <?php elseif ($iframe): ?>
-          <?php echo $iframe; ?>
+        <?php elseif ($iframe_final): ?>
+          <?php echo $iframe_final; ?>
         <?php else: ?>
           <p>Vídeo não disponível.</p>
         <?php endif; ?>
