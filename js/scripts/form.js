@@ -6,12 +6,6 @@ const submitButton = document.getElementById('submit-button');
 const form = document.querySelector('#form-account');
 const wpButton = document.querySelector('#wpforms-submit-25');
 
-if (wpButton) {
-  wpButton.addEventListener('click', function () {
-    gtag_report_conversion();
-  });
-}
-
 // Máscara CNPJ
 if (cnpjInput) {
   cnpjInput.addEventListener('input', function (e) {
@@ -38,8 +32,6 @@ if (form) {
   // Envio do formulário
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    gtag_report_conversion();
 
     const escStatus = selectEscStatus?.value;
     const cnpj = cnpjInput?.value || '';
